@@ -17,7 +17,7 @@ spec:
   interval: 1m0s
   chart: starboard-operator
   sourceRef:
-      kind: HelmRepository
-      name: starboard-operator
-      namespace: flux-system
+    kind: HelmRepository
+    name: starboard-operator
+    namespace: flux-system
   version: 0.10.3

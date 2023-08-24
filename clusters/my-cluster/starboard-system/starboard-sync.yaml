@@ -6,18 +6,19 @@ metadata:
 spec:
   interval: 1m0s
   url: https://aquasecurity.github.io/helm-charts
-
 ---
-apiVersion: helm.toolkit.fluxcd.io/v1beta2
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: starboard-operator
   namespace: starboard-system
 spec:
+  chart:
+    spec:
+      chart: starboard-operator
+      sourceRef:
+        kind: HelmRepository
+        name: starboard-operator
+        namespace: starboard-system
+      version: 0.10.3
   interval: 1m0s
-  chart: starboard-operator
-  sourceRef:
-    kind: HelmRepository
-    name: starboard-operator
-    namespace: starboard-system
-  version: 0.10.3
